@@ -13,7 +13,7 @@ app = Flask(__name__)
 app.secret_key = '019481204712'
 # Your College Scorecard API endpoint
 API_URL = "https://api.data.gov/ed/collegescorecard/v1/schools"
-API_KEY = os.getenv("VL5KYWbqcDjaoTi3r71Nqpth9mV5bGYgbOlzC88y")
+#API_KEY = os.getenv("VL5KYWbqcDjaoTi3r71Nqpth9mV5bGYgbOlzC88y")
 
 
 
