@@ -9,6 +9,9 @@ import requests
 from flask import Flask, render_template, jsonify
 import os
 
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    
 app = Flask(__name__)
 app.secret_key = '019481204712'
 # Your College Scorecard API endpoint
@@ -286,8 +289,8 @@ def search():
     return render_template('search.html', users=users)
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
+
 
 
 @app.route('/user/<email>')
