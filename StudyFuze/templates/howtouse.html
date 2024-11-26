@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use - StudyFuze</title>
+    
+<style>
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #f0f0ff, #e0e7ff);
+    color: #333;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #444;
+}
+
+p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Steps Section */
+.steps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.step-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+}
+
+.icon {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8rem;
+    color: #777;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>How to Use StudyFuze</h1>
+        <nav class="navbar">
+            {% if session.get('logged_in') %}
+                <a href="/">Home</a>
+                <a href="/account">Account</a>
+                <a href="/features">Features</a>
+                <span class="user-menu">Logged in as {{ session['email'] }}</span>
+                <a href="/logout">Logout</a>
+            {% else %}
+                <a href="/">Home</a>
+                <a href="/features">Features</a>
+                <a href="/login">Login</a>
+                <a href="/signup">Signup</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <section class="steps-container">
+        <div class="step-card">
+            <div class="icon">1️⃣</div>
+            <h2>Tell Us Your Interests</h2>
+            <p>Share your study preferences and interests to help us find the best matches for you.</p>
+        </div>
+
+        <div class="step-card">
+            <div class="icon">2️⃣</div>
+            <h2>Choose Your Match</h2>
+            <p>Select from the list of people we match with you based on your preferences.</p>
+        </div>
+
+        <div class="step-card">
+            <div class="icon">3️⃣</div>
+            <h2>Connect!</h2>
+            <p>Start a conversation with your chosen study buddy and begin your learning journey together.</p>
+        </div>
+
+        <div class="step-card">
+            <div class="icon">4️⃣</div>
+            <h2>Search for More</h2>
+            <p>Look for anyone you might have missed or want to reconnect with again.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 StudyFuze. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

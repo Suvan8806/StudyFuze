@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - StudyFuze</title>
+    <link rel="stylesheet" href="/static/css/styles.css"> <!-- Centralized stylesheet -->
+    <style>
+        /* Additional Styles for Features */
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .feature-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-messages">
+            {% for category, message in messages %}
+                <div class="flash-message {{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+    <!-- Top Navigation Bar -->
+    <header class="top-nav">
+        <div class="logo">StudyFuze</div>
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/signup">Sign Up</a>
+            <a href="/login">Login</a>
+        </nav>
+    </header>
+
+    <!-- Features Section -->
+    <main>
+        <h1 class="page-title">Our Services</h1>
+        <section class="features-container">    
+            <div class="feature-card">
+                <div class="icon">🚴‍♂️</div>
+                <h2>How to Use</h2>
+                <p>Learn how to get started with StudyFuze and make the most out of our platform.</p>
+                <a href="/howtouse">More</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🤝</div>
+                <h2>Community</h2>
+                <p>Connect with study buddies and join a thriving community of learners.</p>
+                <a href="/community">More</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">📞</div>
+                <h2>Contact Info</h2>
+                <p>Reach out to us for any inquiries, support, or feedback.</p>
+                <a href="/contact">More</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">ℹ️</div>
+                <h2>About Us</h2>
+                <p>Learn more about StudyFuze, our mission, and what we aim to achieve.</p>
+                <a href="/Aboutus">More</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Image from Freepik</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user_info.name }}'s Bio</title>
+</head>
+<body>
+    <h1>{{ user_info.name }}'s Bio</h1>
+    <ul>
+        <li><strong>Email:</strong> {{ user_info.email }}</li>
+        <li><strong>Age:</strong> {{ user_info.age }}</li>
+        <li><strong>College:</strong> {{ user_info.college }}</li>
+        <li><strong>Major:</strong> {{ user_info.major }}</li>
+        <li><strong>Classes:</strong> {{ user_info.classes }}</li>
+        <li><strong>Hobbies:</strong> {{ user_info.hobbies }}</li>
+    </ul>
+    <a href="{{ url_for('search') }}">Back to Search</a>
+</body>
+</html>

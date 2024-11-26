@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyFuze Community</title>
+</head>
+<body>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Body Style */
+  body {
+    background: linear-gradient(to bottom right, #f8f9fc, #eaeaf5);
+    color: #333;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 1rem;
+  }
+  
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: #6e42f5;
+    font-weight: bold;
+  }
+  
+  .profile-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #6e42f5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Intro Section */
+  .intro {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to bottom right, #f5f7ff, #eceeff);
+    margin-bottom: 2rem;
+  }
+  
+  .intro h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .intro p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /* Highlights Section */
+  .highlights {
+    padding: 2rem;
+    background: linear-gradient(to bottom right, #ffffff, #f9f9ff);
+    margin: 2rem auto;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .highlights h2 {
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .highlight-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .highlight-item {
+    padding: 1rem;
+    background: #f5f7ff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .highlight-item h3 {
+    font-size: 1.2rem;
+    color: #6e42f5;
+  }
+  
+  .highlight-item p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Community Posts Section */
+  .community-posts {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .community-posts h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .posts .post {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .posts .post:last-child {
+    border-bottom: none;
+  }
+  
+  .posts .post p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .posts .post strong {
+    color: #6e42f5;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f5f7ff;
+    color: #666;
+  }
+    </style>
+  <header>
+    <div class="logo">StudyFuze</div>
+    <nav>
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/community" class="active">Community</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Welcome to the StudyFuze Community</h1>
+      <p>Connect, collaborate, and share knowledge with other students.</p>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="highlights">
+      <h2>Community Highlights</h2>
+      <div class="highlight-items">
+        <div class="highlight-item">
+          <h3>Study Group of the Month</h3>
+          <p>Join our "Math Wizards" study group for weekly problem-solving sessions!</p>
+        </div>
+        <div class="highlight-item">
+          <h3>Top Contributor</h3>
+          <p>Shoutout to <strong>Alex Lee</strong> for helping over 50 students this week!</p>
+        </div>
+        <div class="highlight-item">
+          <h3>Upcoming Event</h3>
+          <p>Don't miss the live Q&A with Dr. Smith on study techniques this Friday at 5 PM.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Posts Section -->
+    <section class="community-posts">
+      <h2>Recent Posts</h2>
+
+      <div class="posts">
+        <div class="post">
+          <p><strong>John Doe:</strong> Does anyone have tips for acing calculus exams?</p>
+        </div>
+        <div class="post">
+          <p><strong>Jane Smith:</strong> Check out this study group for bio majors! It's awesome.</p>
+        </div>
+        <div class="post">
+          <p><strong>Alex Lee:</strong> Just got through finals! Time to relax 🎉.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 StudyFuze. All rights reserved.</p>
+  </footer>
+</body>
+</html>

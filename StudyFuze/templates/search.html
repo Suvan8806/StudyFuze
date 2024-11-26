@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            color: #333;
+        }
+        /* Navigation Bar */
+        .navbar {
+            background-color: #007BFF;
+            padding: 10px 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        /* Form Styling */
+        .search-bar {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        input[type="text"], select {
+            width: 25%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .user-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .user-card h2 {
+            font-size: 28px;
+            margin: 0;
+            color: #007BFF;
+        }
+        .user-card p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .user-card .user-info {
+            font-weight: bold;
+        }
+        .user-card .user-details {
+            font-size: 16px;
+            color: #555;
+        }
+        .user-card .hobbies {
+            margin-top: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/search">Search</a>
+        <a href="/account">account</a>
+    </div>
+
+    <div class="container">
+        <h1>Search Results</h1>
+
+        <!-- Search Form with Dropdowns -->
+        <div class="search-bar">
+            <form action="/search" method="POST">
+                
+                <select name="college">
+                    <option value="">-- Select College --</option>
+                    <!-- University of Texas Colleges First -->
+                    <option value="University of Texas at Austin" {% if request.form.get('college') == 'University of Texas at Austin' %}selected{% endif %}>University of Texas at Austin</option>
+                    <option value="University of Texas at San Antonio" {% if request.form.get('college') == 'University of Texas at San Antonio' %}selected{% endif %}>University of Texas at San Antonio</option>
+                    <option value="University of Texas at Arlington" {% if request.form.get('college') == 'University of Texas at Arlington' %}selected{% endif %}>University of Texas at Arlington</option>
+                    <option value="University of Texas at Dallas" {% if request.form.get('college') == 'University of Texas at Dallas' %}selected{% endif %}>University of Texas at Dallas</option>
+                    <option value="University of Texas at El Paso" {% if request.form.get('college') == 'University of Texas at El Paso' %}selected{% endif %}>University of Texas at El Paso</option>
+                    <option value="University of Texas Rio Grande Valley" {% if request.form.get('college') == 'University of Texas Rio Grande Valley' %}selected{% endif %}>University of Texas Rio Grande Valley</option>
+                    <option value="University of Texas Health Science Center at Houston" {% if request.form.get('college') == 'University of Texas Health Science Center at Houston' %}selected{% endif %}>University of Texas Health Science Center at Houston</option>
+                    <option value="University of Texas Health Science Center at San Antonio" {% if request.form.get('college') == 'University of Texas Health Science Center at San Antonio' %}selected{% endif %}>University of Texas Health Science Center at San Antonio</option>
+                    <option value="University of Texas Medical Branch at Galveston" {% if request.form.get('college') == 'University of Texas Medical Branch at Galveston' %}selected{% endif %}>University of Texas Medical Branch at Galveston</option>
+                    <option value="University of Texas Southwestern Medical Center" {% if request.form.get('college') == 'University of Texas Southwestern Medical Center' %}selected{% endif %}>University of Texas Southwestern Medical Center</option>
+                    
+                    <!-- Other Texas Universities -->
+                    <option value="Texas A&M University" {% if request.form.get('college') == 'Texas A&M University' %}selected{% endif %}>Texas A&M University</option>
+                    <option value="Rice University" {% if request.form.get('college') == 'Rice University' %}selected{% endif %}>Rice University</option>
+                    <option value="University of Houston" {% if request.form.get('college') == 'University of Houston' %}selected{% endif %}>University of Houston</option>
+                    <option value="Baylor University" {% if request.form.get('college') == 'Baylor University' %}selected{% endif %}>Baylor University</option>
+                    <option value="Texas Tech University" {% if request.form.get('college') == 'Texas Tech University' %}selected{% endif %}>Texas Tech University</option>
+                    <option value="Southern Methodist University" {% if request.form.get('college') == 'Southern Methodist University' %}selected{% endif %}>Southern Methodist University</option>
+                    <option value="University of Dallas" {% if request.form.get('college') == 'University of Dallas' %}selected{% endif %}>University of Dallas</option>
+                    <option value="University of North Texas" {% if request.form.get('college') == 'University of North Texas' %}selected{% endif %}>University of North Texas</option>
+                    <option value="Sam Houston State University" {% if request.form.get('college') == 'Sam Houston State University' %}selected{% endif %}>Sam Houston State University</option>
+                    <option value="Texas State University" {% if request.form.get('college') == 'Texas State University' %}selected{% endif %}>Texas State University</option>
+                    <option value="Stephen F. Austin State University" {% if request.form.get('college') == 'Stephen F. Austin State University' %}selected{% endif %}>Stephen F. Austin State University</option>
+                    <option value="Texas Christian University" {% if request.form.get('college') == 'Texas Christian University' %}selected{% endif %}>Texas Christian University</option>
+                    <option value="Texas Woman's University" {% if request.form.get('college') == 'Texas Woman\'s University' %}selected{% endif %}>Texas Woman's University</option>
+                </select>
+                
+
+                <select name="major">
+                    <option value="">-- Select Major --</option>
+                    <!-- Popular Majors -->
+                    <option value="Computer Science" {% if request.form.get('major') == 'Computer Science' %}selected{% endif %}>Computer Science</option>
+                    <option value="Electrical Engineering" {% if request.form.get('major') == 'Electrical Engineering' %}selected{% endif %}>Electrical Engineering</option>
+                    <option value="Mechanical Engineering" {% if request.form.get('major') == 'Mechanical Engineering' %}selected{% endif %}>Mechanical Engineering</option>
+                    <option value="Biology" {% if request.form.get('major') == 'Biology' %}selected{% endif %}>Biology</option>
+                    <option value="Business Administration" {% if request.form.get('major') == 'Business Administration' %}selected{% endif %}>Business Administration</option>
+                    <option value="Psychology" {% if request.form.get('major') == 'Psychology' %}selected{% endif %}>Psychology</option>
+                    <option value="Nursing" {% if request.form.get('major') == 'Nursing' %}selected{% endif %}>Nursing</option>
+                    <option value="Chemistry" {% if request.form.get('major') == 'Chemistry' %}selected{% endif %}>Chemistry</option>
+                    <option value="Physics" {% if request.form.get('major') == 'Physics' %}selected{% endif %}>Physics</option>
+                    <option value="Mathematics" {% if request.form.get('major') == 'Mathematics' %}selected{% endif %}>Mathematics</option>
+                    <option value="Economics" {% if request.form.get('major') == 'Economics' %}selected{% endif %}>Economics</option>
+                    <option value="Education" {% if request.form.get('major') == 'Education' %}selected{% endif %}>Education</option>
+                    <option value="Political Science" {% if request.form.get('major') == 'Political Science' %}selected{% endif %}>Political Science</option>
+                    <option value="Art History" {% if request.form.get('major') == 'Art History' %}selected{% endif %}>Art History</option>
+                    <option value="Social Work" {% if request.form.get('major') == 'Social Work' %}selected{% endif %}>Social Work</option>
+                    <option value="History" {% if request.form.get('major') == 'History' %}selected{% endif %}>History</option>
+                    <option value="Sociology" {% if request.form.get('major') == 'Sociology' %}selected{% endif %}>Sociology</option>
+                    <option value="Environmental Science" {% if request.form.get('major') == 'Environmental Science' %}selected{% endif %}>Environmental Science</option>
+                </select>
+                
+
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        {% if users %}
+            <div class="user-cards">
+                {% for user in users %}
+                    <div class="user-card">
+                        <h2>{{ user.name }}</h2>
+                        <p><span class="user-info">Conact Info:</span> {{ user.email }}</p>
+                        <p><span class="user-info">College:</span> {{ user.college }}</p>
+                        <p><span class="user-info">Major:</span> {{ user.major }}</p>
+                        <p><span class="user-info">Classes:</span> {{ user.classes }}</p>
+                        <p><span class="user-info">Hobbies:</span> {{ user.hobbies }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No results found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

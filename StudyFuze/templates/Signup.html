@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyFuze - Sign Up</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-messages">
+            {% for category, message in messages %}
+                <div class="flash-message {{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+<!-- Navigation Bar -->
+<header>
+    <style>
+        /* Body Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 120vh;
+            background: linear-gradient(to bottom right, #f2f2fc, #e6e6ff);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            position: relative;
+        }
+    </style>
+    <div class="logo">StudyFuze</div>
+    <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/signup">Signup</a>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<div class="main-content">
+    <h1>Create Your Account</h1>
+    <p>Please fill in your details to create an account.</p>
+
+    <!-- Sign Up Form -->
+    <div class="form-container">
+        <form action="/signup" method="POST">
+            <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <input type="number" id="age" name="age" placeholder="Age" required>
+            </div>
+
+            <!-- College Dropdown -->
+            <div class="form-group">
+                <label for="collegeDropdown">Select College:</label>
+                <select id="collegeDropdown" name="college" required>
+                    <option value="">-- Select College --</option>
+                    <!-- University of Texas Colleges First -->
+                    <option value="University of Texas at Austin">University of Texas at Austin</option>
+                    <option value="University of Texas at San Antonio">University of Texas at San Antonio</option>
+                    <option value="University of Texas at Arlington">University of Texas at Arlington</option>
+                    <option value="University of Texas at Dallas">University of Texas at Dallas</option>
+                    <option value="University of Texas at El Paso">University of Texas at El Paso</option>
+                    <option value="University of Texas Rio Grande Valley">University of Texas Rio Grande Valley</option>
+                    <option value="University of Texas Health Science Center at Houston">University of Texas Health Science Center at Houston</option>
+                    <option value="University of Texas Health Science Center at San Antonio">University of Texas Health Science Center at San Antonio</option>
+                    <option value="University of Texas Medical Branch at Galveston">University of Texas Medical Branch at Galveston</option>
+                    <option value="University of Texas Southwestern Medical Center">University of Texas Southwestern Medical Center</option>
+                    <option value="Texas A&M University">Texas A&M University</option>
+                    <option value="Rice University">Rice University</option>
+                    <option value="University of Houston">University of Houston</option>
+                    <option value="Baylor University">Baylor University</option>
+                    <option value="Texas Tech University">Texas Tech University</option>
+                    <option value="Southern Methodist University">Southern Methodist University</option>
+                    <option value="University of Dallas">University of Dallas</option>
+                    <option value="University of North Texas">University of North Texas</option>
+                    <option value="Sam Houston State University">Sam Houston State University</option>
+                    <option value="Texas State University">Texas State University</option>
+                    <option value="Stephen F. Austin State University">Stephen F. Austin State University</option>
+                    <option value="Texas Christian University">Texas Christian University</option>
+                    <option value="Texas Woman's University">Texas Woman's University</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="majorDropdown">Select Major:</label>
+                <select id="majorDropdown" name="major" required>
+                    <option value="">-- Select Major --</option>
+                    <!-- Popular Majors -->
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Business Administration">Business Administration</option>
+                    <option value="Psychology">Psychology</option>
+                    <option value="Nursing">Nursing</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Economics">Economics</option>
+                    <option value="Education">Education</option>
+                    <option value="Political Science">Political Science</option>
+                    <option value="Art History">Art History</option>
+                    <option value="Social Work">Social Work</option>
+                    <option value="History">History</option>
+                    <option value="Sociology">Sociology</option>
+                    <option value="Environmental Science">Environmental Science</option>
+                </select>
+            </div>
+         
+            <div class="form-group">
+                <textarea id="classes" name="classes" placeholder="Classes Participating" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <textarea id="hobbies" name="hobbies" placeholder="Hobbies" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyFuze - Account Page</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <style>
+        .main-content {
+          text-align: center;
+          margin-top: 300px;
+          padding: 20px;
+        }
+              /* Body Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 60vh;
+            background:  #e6e6ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-messages">
+            {% for category, message in messages %}
+                <div class="flash-message {{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+<!-- Navigation Bar -->
+<header>
+    <div class="logo">StudyFuze</div>
+    <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="/account">Account</a>
+        {% if session.get('logged_in') %}
+            <span class="user-menu">Logged in as {{ user_info['name'] }}</span>
+            <a href="/logout">Logout</a>
+            <a href="/search">search</a>
+        {% else %}
+            <a href="/login">Login</a>
+            <a href="/signup">Signup</a>
+        {% endif %}
+    </nav>
+</header>
+
+<!-- Main Content -->
+<div class="main-content">
+    <h1>Welcome to Your Account</h1>
+
+    {% if user_info is not none %}
+        <h2>Your Profile</h2>
+        <p><strong>Name:</strong> {{ user_info['name'] }}</p>
+        <p><strong>Email:</strong> {{ user_info['email'] }}</p>
+        <p><strong>Age:</strong> {{ user_info['age'] }}</p>
+        <p><strong>College:</strong> {{ user_info['college'] }}</p>
+        <p><strong>Major:</strong> {{ user_info['major'] }}</p>
+        <p><strong>Classes:</strong> {{ user_info['classes'] }}</p>
+        <p><strong>Hobbies:</strong> {{ user_info['hobbies'] }}</p>
+
+        <!-- Edit Button -->
+        <form action="{{ url_for('edit_account') }}" method="GET">
+            <button type="submit">Edit Account Information</button>
+        </form>
+    {% else %}
+        <h2>Complete Your Profile</h2>
+        <form action="{{ url_for('submit_account') }}" method="POST">
+            <div class="form-group">
+                <input type="number" name="age" placeholder="Age" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="college" placeholder="College" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="major" placeholder="Major" required>
+            </div>
+            <div class="form-group">
+                <textarea name="classes" placeholder="Classes Participating" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <textarea name="hobbies" placeholder="Hobbies" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    {% endif %}
+</div>
+
+</body>
+</html>
