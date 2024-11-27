@@ -5,10 +5,6 @@ StudyFuze is a web application designed to help students connect with each other
 ## Table of Contents
 - [Technologies Used](#technologies-used)
 - [Features](#features)
-- [Installation](#installation)
-- [Environment Variables](#environment-variables)
-- [How to Use](#how-to-use)
-- [License](#license)
 
 ## Technologies Used
 
@@ -27,8 +23,6 @@ StudyFuze is a web application designed to help students connect with each other
 - **Email Contact Form**: Users can contact the admin via an integrated email form.
 - **Session Tracking**: User sessions are stored and managed to maintain logged-in status.
 - **Password Hashing**: Passwords are hashed using **Werkzeug**'s security features to ensure data protection.
-
-## Installation
 
 To run this project locally, follow these steps:
 
