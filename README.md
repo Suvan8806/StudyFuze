@@ -23,3 +23,5 @@ StudyFuze is a web application designed to help students connect with each other
 - **Email Contact Form**: Users can contact the admin via an integrated email form.
 - **Session Tracking**: User sessions are stored and managed to maintain logged-in status.
 - **Password Hashing**: Passwords are hashed using **Werkzeug**'s security features to ensure data protection.
+
+![image](https://github.com/user-attachments/assets/d0eabb58-a98e-4e15-a28b-29261cec5283)
